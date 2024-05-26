@@ -27,6 +27,17 @@
 <!--        android:layout_margin="16dp"/>-->
 
 <!--    <Button-->
+<!--        android:id="@+id/zoom_in_button"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="위치추적"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_alignParentLeft="true"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        android:layout_margin="16dp"/>-->
+
+    <!--    <Button-->
 <!--        android:id="@+id/zoom_out_button"-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->
