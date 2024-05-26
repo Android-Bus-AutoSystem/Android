@@ -2,20 +2,20 @@ import java.util.Properties
 import java.io.FileInputStream
 
 
-//var properties = Properties()
-//properties.load(FileInputStream("local.properties"))
-//
-//// Load local.properties file
-//val localProperties = Properties()
-//val localPropertiesFile = rootProject.file("local.properties")
-//if (localPropertiesFile.exists()) {
-//    localPropertiesFile.inputStream().use { stream ->
-//        localProperties.load(stream)
-//    }
-//}
-//// Read the API key from local.properties
-//val kakaoMapApiKey: String = localProperties.getProperty("KAKAO_MAP_API_KEY") ?: "default_key"
-//
+var properties = Properties()
+properties.load(FileInputStream("local.properties"))
+
+// Load local.properties file
+val localProperties = Properties()
+val localPropertiesFile = rootProject.file("local.properties")
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.inputStream().use { stream ->
+        localProperties.load(stream)
+    }
+}
+// Read the API key from local.properties
+val kakaoMapApiKey: String = localProperties.getProperty("NAVER_CLIENT_ID") ?: "default_key"
+
 
 plugins {
     id("com.android.application")
@@ -33,9 +33,9 @@ android {
         versionCode = 1
         versionName = "1.0"
         //환경변수
-//        manifestPlaceholders["KAKAO_MAP_API_KEY"] = kakaoMapApiKey
+        manifestPlaceholders["NAVER_CLIENT_ID"] = kakaoMapApiKey
         // Add API key to BuildConfig
-//        buildConfigField("String", "KAKAO_MAP_API_KEY", "\"$kakaoMapApiKey\"")
+        buildConfigField("String", "NAVER_CLIENT_ID", "\"$kakaoMapApiKey\"")
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

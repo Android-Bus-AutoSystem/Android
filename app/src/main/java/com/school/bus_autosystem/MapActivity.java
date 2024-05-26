@@ -20,7 +20,10 @@ public class MapActivity  extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
         setTitle("Map Start");
+
+
+        String NAVER_CLIENT_ID = BuildConfig.NAVER_CLIENT_ID;
         NaverMapSdk.getInstance(this).setClient(
-                new NaverMapSdk.NaverCloudPlatformClient("vouulwpc4b"));
+                new NaverMapSdk.NaverCloudPlatformClient(NAVER_CLIENT_ID));
     }
 }
