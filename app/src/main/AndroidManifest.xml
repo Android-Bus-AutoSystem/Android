@@ -15,9 +15,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Bus_AutoSystem"
         tools:targetApi="31">
+
         <meta-data
-            android:name="com.kakao.vectormap.AppKey"
-            android:value="${KAKAO_MAP_API_KEY}"/>
+            android:name="com.naver.maps.map.vouulwpc4b"
+            android:value="vouulwpc4b" />
 
         <activity
             android:name=".MainActivity"
