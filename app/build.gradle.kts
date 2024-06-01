@@ -28,7 +28,7 @@ android {
 
     defaultConfig {
         applicationId = "com.school.bus_autosystem"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -74,7 +74,15 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation ("com.google.android.gms:play-services-location:21.0.1")
 
-    implementation ("net.sourceforge.jexcelapi:jxl:2.6.12")
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation ("com.squareup.okhttp3:logging-interceptor:4.9.1")
+    implementation ("org.apache.poi:poi:5.2.4")
+    implementation ("org.apache.poi:poi-ooxml:5.2.4")
+    implementation ("org.apache.commons:commons-collections4:4.4")
+    implementation ("androidx.constraintlayout:constraintlayout:2.0.4")
+
+//    implementation ("net.sourceforge.jexcelapi:jxl:2.6.12")
 //    implementation ("com.kakao.maps.open:android:2.9.5")
 //    implementation ("com.google.android.gms:play-services-location:21.1.0")
 }

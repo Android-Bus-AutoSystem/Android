@@ -84,7 +84,7 @@
                 android:id="@+id/location_busstop_text"
                 android:layout_width="80dp"
                 android:layout_height="20dp"
-                android:text="주례역"
+                android:text="버스정류장"
                 android:gravity="left|center"
                 android:fontFamily="@font/gmarketsansttfmedium"
                 android:textColor="@android:color/black" />
