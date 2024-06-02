@@ -2,6 +2,7 @@ package com.school.bus_autosystem.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,9 +45,17 @@ public class BusStopAdapter extends RecyclerView.Adapter<BusStopAdapter.ViewHold
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, BusArriveActivity.class);
-                //버스 진짜 번호
+                //버스 진짜 번호 110-1
                 intent.putExtra("busNumber", String.valueOf(busStop.routeno));
-                //버스
+                //routid : BSB5200107000
+                Log.d("checkheck", "routid : " + busStop.routeid);
+                // nodeid : BSB184300201 -> 이게 버스정류장 id
+                Log.d("checkheck", "nodeid : " +  busStop.nodeid);
+                // nodenm : 롯데백화점센텀시티점
+                Log.d("checkheck", "nodenm : " +  busStop.nodenm);
+                intent.putExtra("busStopId", String.valueOf(busStop.nodeid));
+                intent.putExtra("busStopNamer", String.valueOf(busStop.nodenm));
+
 
 
                 context.startActivity(intent);

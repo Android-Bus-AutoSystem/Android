@@ -14,6 +14,8 @@ import com.school.bus_autosystem.Adapter.BusArriveAdapter;
 import com.school.bus_autosystem.Adapter.BusStopAdapter;
 import com.school.bus_autosystem.ResponseClass.BusstopArriveResponse;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,17 +25,27 @@ public class BusArriveActivity extends AppCompatActivity {
 
     private BusArriveAdapter busArriveAdapter;
 
+    private TextView busStopName_TextView;
+
     private Button btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_busarrivetime);
 
+        busStopName_TextView = findViewById(R.id.MainBusStop);
         TextView busNumberTextView = findViewById(R.id.mainbusstp_number);
-
 //         인텐트로부터 버스 번호를 가져옴
+        //110-1번
         String busNumber = getIntent().getStringExtra("busNumber");
         busNumberTextView.setText( busNumber + "번");
+        String busStopId = getIntent().getStringExtra("busStopId");
+        String busStopName = getIntent().getStringExtra("busStopNamer");
+        busStopName_TextView.setText(busStopName);
+
+
+
+
 
         btn = findViewById(R.id.btn);
         List<BusstopArriveResponse.Response.Body.Items.Item> bus = mySingleton.getBusStopListSingleton();
@@ -46,6 +58,8 @@ public class BusArriveActivity extends AppCompatActivity {
                     BusstopArriveResponse.Response.Body.Items.Item firstItem = bus.get(0);
                     intent.putExtra("firstBusStopNumber", firstItem.routeno);
                     intent.putExtra("firstBusStopName", firstItem.nodenm);
+                    intent.putExtra("firstBusStopId", firstItem.nodeid);
+//                    String busStopId = getIntent().getStringExtra("busStopId");
 //                    intent.putExtra("firstBusStopName", firstItem.);
                     intent.putExtra("busNumber", busNumber);
                 }
