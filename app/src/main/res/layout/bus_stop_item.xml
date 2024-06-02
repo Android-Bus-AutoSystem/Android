@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/bottom_line"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/button_icon"
+        android:layout_width="48dp"
+        android:layout_height="65dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:layout_marginLeft="5dp"
+        android:src="@drawable/busstop"
+        android:layout_gravity="center_vertical" /> <!-- 추가된 부분 -->
+
+    <LinearLayout
+        android:id="@+id/text_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:layout_gravity="center_vertical"> <!-- 추가된 부분 -->
+
+        <TextView
+            android:id="@+id/route_no"
+            android:fontFamily="@font/gmarketsansttflight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Route No"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:fontFamily="@font/gmarketsansttflight"
+            android:id="@+id/vehicle_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vehicle Type"
+            android:visibility="gone"
+            android:textSize="16sp" />
+
+        <TextView
+            android:fontFamily="@font/gmarketsansttflight"
+            android:id="@+id/arrival_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Arrival Time"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</LinearLayout>
