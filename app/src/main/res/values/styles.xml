@@ -5,4 +5,5 @@
         <item name="android:background">@drawable/setting_button_style</item>
         <item name="android:textColor">#FFFFFF</item>
     </style>
+
 </resources>
