@@ -119,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
     public void readExcel() {
         try {
             InputStream is = getAssets().open("busan_busstop_location_version2.xlsx");
+//            InputStream is = getAssets().open("busan_busstop_location.xlsx");
             XSSFWorkbook workbook = new XSSFWorkbook(is);
             Sheet sheet = workbook.getSheetAt(0);
             if (sheet != null) {
@@ -191,78 +192,6 @@ public class MainActivity extends AppCompatActivity {
             db.close();
         }
     }
-//    private void saveDataToDatabase(Sheet sheet) {
-//        SQLiteDatabase db = dbHelper.getWritableDatabase();
-//        db.beginTransaction(); // 트랜잭션 시작
-//        try {
-//            Iterator<Row> rowIterator = sheet.iterator();
-//            rowIterator.next();
-//            while (rowIterator.hasNext()) {
-//
-//                String latitude = null;
-//                String longitude = null;
-//                Row row = rowIterator.next();
-//
-//                String stopNumber = row.getCell(0).getStringCellValue();
-//                String stopName = row.getCell(1).getStringCellValue();
-//                switch (row.getCell(2).getCellType())
-//                {
-//                    case FORMULA:
-//                        latitude = row.getCell(2).getCellFormula();
-//                        break;
-//                    case STRING:
-//                        latitude =  row.getCell(2).getStringCellValue() + "";
-//                        break;
-//                    case NUMERIC:
-//                        latitude =  row.getCell(2).getNumericCellValue() + "";
-//                        break;
-//                    case BLANK:
-//                        latitude = row.getCell(2).getBooleanCellValue() + "";
-//                        break;
-//                    case ERROR:
-//                        latitude = row.getCell(2).getErrorCellValue() + "";
-//                        break;
-//                }
-//                switch (row.getCell(3).getCellType())
-//                {
-//                    case FORMULA:
-//                        longitude = row.getCell(3).getCellFormula();
-//                        break;
-//                    case STRING:
-//                        longitude =  row.getCell(3).getStringCellValue() + "";
-//                        break;
-//                    case NUMERIC:
-//                        longitude =  row.getCell(3).getNumericCellValue() + "";
-//                        break;
-//                    case BLANK:
-//                        longitude = row.getCell(3).getBooleanCellValue() + "";
-//                        break;
-//                    case ERROR:
-//                        longitude = row.getCell(3).getErrorCellValue() + "";
-//                        break;
-//                }
-//                String mobileNumber =  row.getCell(4).getNumericCellValue() + "";
-//                // INSERT 쿼리 실행
-//                String insertQuery = "INSERT INTO " + BusStopDatabaseHelper.TABLE_NAME + " (" +
-//                        BusStopDatabaseHelper.COLUMN_STOP_NUMBER + ", " +
-//                        BusStopDatabaseHelper.COLUMN_STOP_NAME + ", " +
-//                        BusStopDatabaseHelper.COLUMN_LATITUDE + ", " +
-//                        BusStopDatabaseHelper.COLUMN_LONGITUDE + ", " +
-//                        BusStopDatabaseHelper.COLUMN_MOBILE_NUMBER +
-//                        ") VALUES (?, ?, ?, ?, ?)";
-//
-//                db.execSQL(insertQuery, new String[]{stopNumber, stopName, latitude, longitude, mobileNumber});
-//            }
-//
-//            db.setTransactionSuccessful(); // 트랜잭션 성공적으로 완료
-//        } catch (Exception e) {
-//            Log.d("Main", "Error: " + e.getMessage());
-//            e.printStackTrace();
-//        } finally {
-//            db.endTransaction(); // 트랜잭션 종료
-//            db.close();
-//        }
-//    }
 
     public void getBusStations(double gpsLati, double gpsLong) {
         BusStationApi api = RetrofitClient.getClient().create(BusStationApi.class);
@@ -320,20 +249,6 @@ public class MainActivity extends AppCompatActivity {
         }
         fusedLocationClient.requestLocationUpdates(locationRequest, locationCallback, Looper.getMainLooper());
     }
-//    private void showLoadingDialog() {
-//        if (progressDialog == null) {
-//            progressDialog = new ProgressDialog(this);
-//            progressDialog.setMessage("데이터를 로드하는 중입니다...");
-//            progressDialog.setCancelable(false);
-//        }
-//        progressDialog.show();
-//    }
-
-//    private void dismissLoadingDialog() {
-//        if (progressDialog != null && progressDialog.isShowing()) {
-//            progressDialog.dismiss();
-//        }
-//    }
 
     private boolean isDatabaseExists() {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
