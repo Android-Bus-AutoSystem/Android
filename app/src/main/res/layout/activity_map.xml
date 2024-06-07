@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,12 +6,12 @@
     android:background="@color/white"
     tools:context=".MapActivity">
 
-
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/map_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:name="com.naver.maps.map.MapFragment" />
+
     <LinearLayout
         android:id="@+id/info_layout"
         android:layout_width="match_parent"
@@ -32,131 +31,20 @@
             android:textStyle="bold"
             android:paddingBottom="8dp" />
 
-        <Button
-            android:id="@+id/view_details_button"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="View Details" />
+            android:layout_height="wrap_content">
+
+            <android.widget.Button
+                android:id="@+id/view_details_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/RoundedButton"
+                android:gravity="center"
+                android:fontFamily="@font/gmarketsansttflight"
+                android:text="정류장보기"
+                android:layout_centerInParent="true" />
+        </RelativeLayout>
     </LinearLayout>
 
 </RelativeLayout>
-<!--<?xml version="1.0" encoding="utf-8"?>-->
-<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
-<!--    xmlns:tools="http://schemas.android.com/tools"-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="match_parent"-->
-<!--    android:background="@color/white"-->
-<!--    tools:context=".MapActivity">-->
-
-
-<!--    &lt;!&ndash;    <com.kakao.vectormap.MapView&ndash;&gt;-->
-<!--    &lt;!&ndash;        android:id="@+id/map_view"&ndash;&gt;-->
-<!--    &lt;!&ndash;        android:layout_width="match_parent"&ndash;&gt;-->
-<!--    &lt;!&ndash;        android:layout_height="0dp"&ndash;&gt;-->
-<!--    &lt;!&ndash;        app:layout_constraintBottom_toTopOf="@id/guideline1"&ndash;&gt;-->
-<!--    &lt;!&ndash;        app:layout_constraintStart_toStartOf="parent"&ndash;&gt;-->
-<!--    &lt;!&ndash;        app:layout_constraintTop_toTopOf="parent" />&ndash;&gt;-->
-
-<!--    &lt;!&ndash;    <Button&ndash;&gt;-->
-<!--    &lt;!&ndash;        android:id="@+id/zoom_in_button"&ndash;&gt;-->
-<!--    &lt;!&ndash;        android:layout_width="wrap_content"&ndash;&gt;-->
-<!--    &lt;!&ndash;        android:layout_height="wrap_content"&ndash;&gt;-->
-<!--    &lt;!&ndash;        android:text="Zoom In"&ndash;&gt;-->
-<!--    &lt;!&ndash;        android:layout_alignParentBottom="true"&ndash;&gt;-->
-<!--    &lt;!&ndash;        android:layout_alignParentLeft="true"&ndash;&gt;-->
-<!--    &lt;!&ndash;        app:layout_constraintStart_toStartOf="parent"&ndash;&gt;-->
-<!--    &lt;!&ndash;        app:layout_constraintTop_toTopOf="parent"&ndash;&gt;-->
-<!--    &lt;!&ndash;        android:layout_margin="16dp"/>&ndash;&gt;-->
-
-<!--    &lt;!&ndash;    <Button&ndash;&gt;-->
-<!--    &lt;!&ndash;        android:id="@+id/zoom_out_button"&ndash;&gt;-->
-<!--    &lt;!&ndash;        android:layout_width="wrap_content"&ndash;&gt;-->
-<!--    &lt;!&ndash;        android:layout_height="wrap_content"&ndash;&gt;-->
-<!--    &lt;!&ndash;        android:text="Zoom Out"&ndash;&gt;-->
-<!--    &lt;!&ndash;        android:layout_alignParentBottom="true"&ndash;&gt;-->
-<!--    &lt;!&ndash;        android:layout_alignParentRight="true"&ndash;&gt;-->
-<!--    &lt;!&ndash;        app:layout_constraintStart_toEndOf="@id/zoom_in_button"&ndash;&gt;-->
-<!--    &lt;!&ndash;        app:layout_constraintTop_toTopOf="parent"&ndash;&gt;-->
-<!--    &lt;!&ndash;        android:layout_margin="16dp"/>&ndash;&gt;-->
-
-<!--    <androidx.fragment.app.FragmentContainerView-->
-<!--        android:id="@+id/map_fragment"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:name="com.naver.maps.map.MapFragment" />-->
-
-<!--    &lt;!&ndash;    <androidx.constraintlayout.widget.Guideline&ndash;&gt;-->
-<!--    &lt;!&ndash;        android:id="@+id/guideline1"&ndash;&gt;-->
-<!--    &lt;!&ndash;        android:layout_width="wrap_content"&ndash;&gt;-->
-<!--    &lt;!&ndash;        android:layout_height="wrap_content"&ndash;&gt;-->
-<!--    &lt;!&ndash;        android:orientation="horizontal"&ndash;&gt;-->
-<!--    &lt;!&ndash;        app:layout_constraintGuide_percent="0.85" />&ndash;&gt;-->
-
-
-<!--    &lt;!&ndash;    <LinearLayout&ndash;&gt;-->
-<!--    &lt;!&ndash;        android:id="@+id/button_layout"&ndash;&gt;-->
-<!--    &lt;!&ndash;        android:layout_width="365dp"&ndash;&gt;-->
-<!--    &lt;!&ndash;        android:layout_height="80dp"&ndash;&gt;-->
-<!--    &lt;!&ndash;        android:orientation="horizontal"&ndash;&gt;-->
-<!--    &lt;!&ndash;        android:gravity="center_vertical"&ndash;&gt;-->
-<!--    &lt;!&ndash;        android:background="@drawable/list_rectangle_box"&ndash;&gt;-->
-<!--    &lt;!&ndash;        android:clickable="true"&ndash;&gt;-->
-<!--    &lt;!&ndash;        android:focusable="true"&ndash;&gt;-->
-<!--    &lt;!&ndash;        android:layout_marginTop="5dp"&ndash;&gt;-->
-
-<!--    &lt;!&ndash;        app:layout_constraintTop_toBottomOf="@id/guideline1"&ndash;&gt;-->
-<!--    &lt;!&ndash;        app:layout_constraintStart_toStartOf="parent"&ndash;&gt;-->
-<!--    &lt;!&ndash;        app:layout_constraintBottom_toBottomOf="parent"&ndash;&gt;-->
-<!--    &lt;!&ndash;        app:layout_constraintEnd_toEndOf="parent">&ndash;&gt;-->
-
-<!--    &lt;!&ndash;        <ImageView&ndash;&gt;-->
-<!--    &lt;!&ndash;            android:id="@+id/button_icon"&ndash;&gt;-->
-<!--    &lt;!&ndash;            android:layout_width="48dp"&ndash;&gt;-->
-<!--    &lt;!&ndash;            android:layout_height="65dp"&ndash;&gt;-->
-<!--    &lt;!&ndash;            android:paddingTop="8dp"&ndash;&gt;-->
-<!--    &lt;!&ndash;            android:paddingBottom="8dp"&ndash;&gt;-->
-<!--    &lt;!&ndash;            android:layout_marginLeft="5dp"&ndash;&gt;-->
-<!--    &lt;!&ndash;            android:src="@drawable/busstop" />&ndash;&gt;-->
-
-<!--    &lt;!&ndash;        <LinearLayout&ndash;&gt;-->
-<!--    &lt;!&ndash;            android:id="@+id/text_layout"&ndash;&gt;-->
-<!--    &lt;!&ndash;            android:layout_width="wrap_content"&ndash;&gt;-->
-<!--    &lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
-<!--    &lt;!&ndash;            android:orientation="vertical"&ndash;&gt;-->
-<!--    &lt;!&ndash;            android:gravity="center_vertical"&ndash;&gt;-->
-<!--    &lt;!&ndash;            >&ndash;&gt;-->
-
-
-<!--    &lt;!&ndash;            <TextView&ndash;&gt;-->
-<!--    &lt;!&ndash;                android:id="@+id/near_busstop_text"&ndash;&gt;-->
-<!--    &lt;!&ndash;                android:layout_width="100dp"&ndash;&gt;-->
-<!--    &lt;!&ndash;                android:layout_height="25dp"&ndash;&gt;-->
-<!--    &lt;!&ndash;                android:textSize="20sp"&ndash;&gt;-->
-<!--    &lt;!&ndash;                android:text="주변정류장"&ndash;&gt;-->
-<!--    &lt;!&ndash;                android:gravity="left|center"&ndash;&gt;-->
-<!--    &lt;!&ndash;                android:fontFamily="@font/gmarketsansttfmedium"&ndash;&gt;-->
-<!--    &lt;!&ndash;                android:textColor="@android:color/black" />&ndash;&gt;-->
-
-<!--    &lt;!&ndash;            <TextView&ndash;&gt;-->
-<!--    &lt;!&ndash;                android:id="@+id/location_busstop_text"&ndash;&gt;-->
-<!--    &lt;!&ndash;                android:layout_width="80dp"&ndash;&gt;-->
-<!--    &lt;!&ndash;                android:layout_height="20dp"&ndash;&gt;-->
-<!--    &lt;!&ndash;                android:text="주례역"&ndash;&gt;-->
-<!--    &lt;!&ndash;                android:gravity="left|center"&ndash;&gt;-->
-<!--    &lt;!&ndash;                android:fontFamily="@font/gmarketsansttfmedium"&ndash;&gt;-->
-<!--    &lt;!&ndash;                android:textColor="@android:color/black" />&ndash;&gt;-->
-
-<!--    &lt;!&ndash;            <TextView&ndash;&gt;-->
-<!--    &lt;!&ndash;                android:id="@+id/location_busstop_text2"&ndash;&gt;-->
-<!--    &lt;!&ndash;                android:layout_width="80dp"&ndash;&gt;-->
-<!--    &lt;!&ndash;                android:layout_height="20dp"&ndash;&gt;-->
-<!--    &lt;!&ndash;                android:text="주례역"&ndash;&gt;-->
-<!--    &lt;!&ndash;                android:gravity="left|center"&ndash;&gt;-->
-<!--    &lt;!&ndash;                android:fontFamily="@font/gmarketsansttfmedium"&ndash;&gt;-->
-<!--    &lt;!&ndash;                android:textColor="@android:color/black" />&ndash;&gt;-->
-<!--    &lt;!&ndash;        </LinearLayout>&ndash;&gt;-->
-
-<!--    &lt;!&ndash;    </LinearLayout>&ndash;&gt;-->
-<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
-
