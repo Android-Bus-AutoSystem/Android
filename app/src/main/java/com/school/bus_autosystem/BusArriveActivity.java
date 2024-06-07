@@ -55,13 +55,21 @@ public class BusArriveActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(BusArriveActivity.this, NFCActivity.class);
                 if (bus != null){
+                    for (BusstopArriveResponse.Response.Body.Items.Item item : bus) {
+                        Log.d("BusList", "RouteNo: " + item.routeno + ", ArrTime: " + item.arrtime + ", BusStopId: " + item.nodeid + ", vehicletp" + item.vehicletp);
+                    }
                     BusstopArriveResponse.Response.Body.Items.Item firstItem = bus.get(0);
-                    intent.putExtra("firstBusStopNumber", firstItem.routeno);
-                    intent.putExtra("firstBusStopName", firstItem.nodenm);
-                    intent.putExtra("firstBusStopId", firstItem.nodeid);
+//                    intent.putExtra("firstBusStopNumber", firstItem.routeno);
+//                    intent.putExtra("firstBusStopName", firstItem.nodenm);
+//                    intent.putExtra("firstBusStopId", firstItem.nodeid);
+
+                    intent.putExtra("firstBusStopNumber", busNumber);
+                    intent.putExtra("firstBusStopName", busStopName);
+                    intent.putExtra("firstBusStopId", busStopId);
+
 //                    String busStopId = getIntent().getStringExtra("busStopId");
 //                    intent.putExtra("firstBusStopName", firstItem.);
-                    intent.putExtra("busNumber", busNumber);
+//                    intent.putExtra("busNumber", busNumber);
                 }
 //                intent.putExtra("busNumber", busNumber);
                 startActivity(intent);

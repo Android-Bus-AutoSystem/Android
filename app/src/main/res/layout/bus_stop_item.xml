@@ -25,7 +25,7 @@
         android:layout_gravity="center_vertical"> <!-- 추가된 부분 -->
 
         <TextView
-            android:id="@+id/route_no"
+            android:id=" @+id/route_no"
             android:fontFamily="@font/gmarketsansttflight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
